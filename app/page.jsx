@@ -19,14 +19,17 @@ const Home = () => {
               <br/> 
               <span className="text-accent">Tejasree Parasa!</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
+            <p className="max-w-[600px] mb-9 text-white/80">
             
   <span className="text-accent">Microsoft | 3+ YOE | 12x Professional Certified</span> <br/>
-  <br /> Innovating at the intersection of <span className="text-accent">Machine Learning, Cloud Computing, and Software Development</span>.  
-  I architect intelligent systems that drive business impact, optimize performance, and push technological boundaries. Engineering isn’t just about code — it’s about creating solutions that redefine possibilities. <span className="text-accent"> Every algorithm, every deployment, every innovation should drive meaningful change — and that’s what I build for. </span>
+  <br /> 
+ 
+  Innovating at the intersection of <span className="font-extrabold">Machine Learning, Cloud Computing, and Software Development.</span>  
+  <br/> I architect scalable, intelligent systems that <span className="font-extrabold">optimize performance, drive innovation,</span> and solve real-world challenges.  
+  Engineering isn’t just about code—it’s about <span className="font-extrabold">creating solutions that scale, adapt, and push boundaries,</span> ensuring that technology works for us, making every process more efficient, accessible, and impactful.  
+  <span className="font-extrabold"> <br/> Every algorithm, every deployment, and every innovation</span> is driven by purpose—building systems that <span className="font-extrabold">make a real difference in a smarter, more connected world.</span>
 
-
-            </p>
+</p>
             {/*Button and Socials*/}
             <div className="flex flex-col xl:flex-row items-center gap-8">
             <a href="/Tejasree_Parasa_3YOE_SoftwareEngineer.pdf" download>
