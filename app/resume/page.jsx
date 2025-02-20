@@ -1,271 +1,259 @@
 "use client";
-import {FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaPython, FaAzure} from 'react-icons/fa';
-import {SiTailwindcss, SiNextdotjs} from 'react-icons/si';
 
-//About Data
+import { FaBriefcase } from "react-icons/fa";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { motion } from "framer-motion";
+
+// About Data
 const about = {
-  title: 'About Me',
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio culpa fugiat atque, quae repellendus laudantium asperiores porro sed facere nemo dolorum sunt dignissimos quia, ea possimus numquam eos veritatis fuga.",
+  title: "About Me",
+  description: 
+    "Hey there! 👋 \n\nThanks for taking the time to visit my profile! I’m a Software Engineer with nearly 4 years of experience, including 3+ years at Microsoft in Azure Cloud & AI. My expertise lies in backend engineering, cloud computing, AI/ML, and distributed systems—building scalable, high-performance solutions that drive real-world impact. \n\n" + 
+    "💡 I’m passionate about technology because of its power to create meaningful change. I have a deep interest in healthcare technology and love leveraging AI and cloud innovations to make a real difference. \n\n" + 
+    "🌍 Beyond engineering, I enjoy mentoring, teaching, and contributing to community and diversity initiatives. Outside of work, you’ll find me exploring the outdoors, writing, photographing, filmmaking, and enjoying great movies! \n\n" + 
+    "I’m always excited to connect—let’s chat! 😊",
   info: [
-    {
-      fieldName:"Name",
-      fieldValue: "Tejasree Parasa"
-    },
-    {
-      fieldName:"Phone",
-      fieldValue: "+(1) 856 924 1200"
-    },
-    {
-      fieldName:"Experience",
-      fieldValue: "3+ Years"
-    },
-    {
-      fieldName:"Skype",
-      fieldValue: "tpcodes24"
-    },
-    {
-      fieldName:"Nationality",
-      fieldValue: "Indian"
-    },
-    {
-      fieldName:"Email",
-      fieldValue: "p.tejasree089@gmail.com"
-    },
-    {
-      fieldName:"Freelance",
-      fieldValue: "Available"
-    },
-    {
-      fieldName:"Languages",
-      fieldValue: "English, Telugu, Hindi"
-    },    
-  ]  
+    { fieldName: "Name", fieldValue: "Tejasree Parasa" },
+    { fieldName: "Phone", fieldValue: "+(1) 856 924 1200" },
+    { fieldName: "Experience", fieldValue: "3+ Years" },
+    { fieldName: "Email", fieldValue: "p.tejasree089@gmail.com" },
+    { fieldName: "Freelance", fieldValue: "Available" },
+    { fieldName: "Languages", fieldValue: "English, Telugu, Hindi, Spanish" },
+  ],
 };
 
-//Experience Data 
-/*/assets/resume/badge.svg*/
-const experience = {
-  icon: '',
-  title: "My experience",
-  description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
-  items: [
-    {
-      company: "Microsoft",
-      position: "SDE",
-      duration: "2020-2023"
-    },
-    {
-      company: "Microsoft",
-      position: "SDE",
-      duration: "2020-2023"
-    },
-    {
-      company: "Microsoft",
-      position: "SDE",
-      duration: "2020-2023"
-    },
-    {
-      company: "Microsoft",
-      position: "SDE",
-      duration: "2020-2023"
-    },
-    {
-      company: "Microsoft",
-      position: "SDE",
-      duration: "2020-2023"
-    },
-  ]
-}
 
-//Education Data 
-/*/assets/resume/cap.svg*/
-const education = {
-  icon: '',
-  title: "My education",
-  description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
-  items: [
-    {
-      institution: "Microsoft",
-      degree: "SDE",
-      duration: "2020-2023"
-    },
-    {
-      institution: "Microsoft",
-      degree: "SDE",
-      duration: "2020-2023"
-    },
-    {
-      institution: "Microsoft",
-      degree: "SDE",
-      duration: "2020-2023"
-    },    
-  ]
-}
+// Experience Data (Timeline Format)
+const experience = [
+  {
+    company: "Microsoft",
+    location: "Hyderabad, India",
+    role: "Software Engineer II: Azure Cloud & AI Domain",
+    duration: "Feb 2022 – Aug 2023",
+    description:
+      "Led engineering for Azure Landing Zones, cutting manual effort by 90% and reducing deployment time by 85%. Designed event-driven architectures using Azure Services, C#, and CosmosDB. Optimized ML models with TensorRT, boosting accuracy to 94% and inference speed by 5×.",
+  },
+  {
+    company: "Microsoft",
+    location: "Hyderabad, India",
+    role: "Software Engineer: Azure Cloud & AI Domain",
+    duration: "Aug 2020 – Feb 2022",
+    description:
+      "Developed scalable data platforms using PySpark and Databricks, accelerating model training by 3×. Led cloud migrations, reducing support costs by 60% and modernizing 1,000+ apps.",
+  },
+  {
+    company: "Indian Servers",
+    location: "India",
+    role: "Machine Learning Intern",
+    duration: "Jan 2020 – Jun 2020",
+    description:
+      "Built a Transformer-GNN hybrid for scene understanding in autonomous navigation, enhancing object interaction. Optimized inference latency by 52% and memory footprint by 35%.",
+  },
+  {
+    company: "iON Technologies",
+    location: "India",
+    role: "IoT Research Intern",
+    duration: "Mar 2019 – Jun 2019",
+    description:
+      "Developed an IoT smart medicine box for Alzheimer's care with real-time tracking and dosage reminders, securing an R&D grant and a patent.",
+  },
+];
 
-//Skills Data 
-/*/assets/resume/cap.svg*/
-const skills = {
-  icon: '',
-  title: "My skills",
-  description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
-  skillslist: [
-    {
-      icon: <FaHtml5 />,
-      name: "html 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "html 5",
-    },
-    {
-      icon: <FaJs />,
-      name: "html 5",
-    },
-    {
-      icon: <FaPython />,
-      name: "html 5",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "html 5",
-    },   
-  ]
-}
+// Education Data (Separate Boxes with Key Courses)
+const education = [
+  {
+    institution: "The Pennsylvania State University",
+    location: "University Park, PA, USA",
+    degree: "Master of Science in Computer Science and Engineering",
+    duration: "Aug 2023 – May 2025",
+    gpa: "GPA: 3.62/4.0",
+    courses: [
+      "Distributed Systems",
+      "Data Structures and Algorithms",
+      "Machine Learning",
+      "Deep Learning with Graphs",
+      "Advanced Operating Systems",
+      "Computer Architecture & Networks",
+      "Natural Language Processing",
+      "Advanced Computer Vision",
+    ],
+    awards: [
+      "Graduate Teaching Assistantship (DBMS)",
+      "Graduate Women in Engineering (Executive Board)",
+      "Nittany AI Club",
+    ],
+  },
+  {
+    institution: "Velagapudi Ramakrishna Siddhartha Engineering College",
+    location: "India",
+    degree: "Bachelor of Technology in Computer Science and Engineering",
+    duration: "July 2016 – Sept 2020",
+    gpa: "GPA: 9.0/10.0",
+    courses: [
+      "Database Management Systems",
+      "Data Structures",
+      "Object-Oriented Programming",
+      "Artificial Intelligence",
+      "Advanced Database Systems",
+      "Cloud Computing",
+      "Computer Networks",
+      "Operating Systems",
+    ],
+    awards: [
+      "Best Graduating Student",
+      "President - Entrepreneurship Club",
+      "Lead - CSE Innovation & ASSET Clubs",
+      "Python Programming Instructor",
+    ],
+  },
+];
 
-import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'; 
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { motion} from 'framer-motion';
+// Skills Data (Structured & Readable)
+const skills = [
+  {
+    category: "Programming",
+    items: ["Python", "C", "C++", "C#", "ASP.NET", "Java", "R", "JavaScript", "Node.js", "React", "GraphQL"],
+  },
+  {
+    category: "AI & ML",
+    items: ["Neural Networks (CNNs, GNNs, GATs)", "NLP", "Computer Vision", "PyTorch", "TensorFlow", "ONNX", "MLOps", "LLMOps", "GenAI"],
+  },
+  {
+    category: "Cloud & DevOps",
+    items: ["Azure", "AWS", "GCP", "Kubernetes", "Docker", "CI/CD", "Terraform", "Apache Kafka"],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MySQL (Relational)", "MongoDB", "Redis (NoSQL)", "Neo4j (Graph)"],
+  },
+  {
+    category: "Systems & Architecture",
+    items: ["Distributed Systems", "Microservices", "Observability", "Linux"],
+  },
+  {
+    category: "Frameworks & Tools",
+    items: ["Spring Boot", "Flask", "Postman"],
+  },
+];
 
 const Resume = () => {
   return (
-    <motion.div 
-    initial={{opacity: 0}}
-    animate = {{
-      opacity: 1, 
-      transition: {delay: 2.4, duration: 0.4, ease: 'easeIn'}}}
-
-    className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0'
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 0.4, duration: 0.6, ease: "easeIn" },
+      }}
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
-      <div className = "container mx-auto">
-        <Tabs 
-        defaultValue='experience' 
-        className="flex flex-col xl:flex-row gap-[60px]">
-            <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-              <TabsTrigger value="experience" >Experience</TabsTrigger>
-              <TabsTrigger value = "education">Education</TabsTrigger>
-              <TabsTrigger value = "skills">Skills</TabsTrigger>
-              <TabsTrigger value="about">About Me</TabsTrigger>
-            </TabsList>
-            {/*Content*/}
-            <div className='min-h-[70vh] w-full'>
+      <div className="container mx-auto">
+        <Tabs defaultValue="experience" className="flex flex-col xl:flex-row gap-[60px]">
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+            <TabsTrigger value="experience">Experience</TabsTrigger>
+            <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="about">About Me</TabsTrigger>
+          </TabsList>
 
-              {/*experience*/}
-              <TabsContent value = "experience" className="w-full">
-                <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                  <h3 className='text-4xl font-bold'>{experience.title}</h3>
-                  <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{experience.description}</p>
-                  <ScrollArea className='h-[400px]'>
-                    <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
-                      {experience.items.map((item,index) => {
-                        return <li key={index} className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center
-                        items-center lg:items-start gap-1'>
-                          <span className='text-accent'>{item.duration}</span>
-                          <h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>{item.position}</h3>
-                          <div className='flex items-center gap-3'>
-                            {/*dot*/}
-                            <span className='w-[6px] h-[6px] rounded-full bg-accent'></span>
-                            <p className='text-white/60'>{item.company}</p>
-                          </div>
-                        </li>
-                      })}
-                    </ul>
-
-                  </ScrollArea>
-                </div>
-              </TabsContent>
-
-
-              {/*education*/}
-              <TabsContent value = "education" className="w-full">
-                <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                  <h3 className='text-4xl font-bold'>{education.title}</h3>
-                  <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{education.description}</p>
-                  <ScrollArea className='h-[400px]'>
-                    <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
-                      {education.items.map((item,index) => {
-                        return <li key={index} className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center
-                        items-center lg:items-start gap-1'>
-                          <span className='text-accent'>{item.duration}</span>
-                          <h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>{item.degree}</h3>
-                          <div className='flex items-center gap-3'>
-                            {/*dot*/}
-                            <span className='w-[6px] h-[6px] rounded-full bg-accent'></span>
-                            <p className='text-white/60'>{item.institution}</p>
-                          </div>
-                        </li>
-                      })}
-                    </ul>
-
-                  </ScrollArea>
-                </div>
-              </TabsContent>
-
-
-              {/*skills*/}
-              <TabsContent value = "skills" className="w-full h-full">
-
-                <div className='flex flex-col gap-[30px]'>
-                  <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                    <h3 className='text-4xl font-bold'>{skills.title}</h3>
-                    <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{skills.description}</p>
+          <div className="min-h-[70vh] w-full">
+            {/* Experience Timeline */}
+            <TabsContent value="experience">
+              <h3 className="text-4xl font-bold">Experience</h3>
+              <div className="relative border-l-4 border-accent ml-6">
+                {experience.map((job, index) => (
+                  <div key={index} className="mb-12 ml-6">
+                    <div className="bg-[#232329] p-6 rounded-lg shadow-lg max-w-3xl">
+                      <h3 className="text-xl font-semibold text-white">{job.role}</h3>
+                      <p className="text-white/60">{job.company} - {job.location}</p>
+                      <p className="text-sm text-accent mb-3">{job.duration}</p>
+                      <p className="text-white/80">{job.description}</p>
+                    </div>
                   </div>
-                  <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]'>
-                    {skills.skillslist.map((skill, index)=> {
-                      return (
-                      <li key={index}>
-                          <TooltipProvider delayDuration={100}>
-                          <Tooltip>
-                          <TooltipTrigger className='w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group'>
-                            <div className='text-6xl group-hover:text-accent transition-all duration-300'>{skill.icon}</div>
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p className='capitalize'>{skill.name}</p>
-                          </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </li> 
-                      )
-                    })}
-                  </ul>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Education */}
+            <TabsContent value="education">
+              <h3 className="text-4xl font-bold">Education</h3>
+              {education.map((edu, index) => (
+                <div key={index} className="bg-[#232329] p-6 rounded-lg shadow-lg mb-6">
+                  <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
+                  <p className="text-white/60">{edu.institution} - {edu.location}</p>
+                  <p className="text-sm text-accent mb-3">{edu.duration} | {edu.gpa}</p>
+                  
+                  <p className="text-white/80"><strong>Leadership & Awards:</strong> {edu.awards.join(", ")}</p> <br/>
+                  <p className="text-white/80"><strong>Key Courses:</strong> {edu.courses.join(", ")}</p>
                 </div>
-              </TabsContent>
+              ))}
+            </TabsContent>
 
-
-              {/*about me*/}
-              <TabsContent value="about" className="w-full text-center xl:text-left">
-                <div className='flex flex-col gap-[30px]'>
-                  <h3 className='text-4xl font-bold'>{about.title}</h3>
-                  <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{about.description}</p>
-                  <ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0'>
-                    {about.info.map((item, index)=> {
-                      return (
-                        <li key={index} className='flex items-center justify-center xl:justify-start gap-4'>
-                          <span className='text-white/60'>{item.fieldName}</span>
-                          <span className='text-xl'>{item.fieldValue}</span>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                </div>
-              </TabsContent>
-
-
+            {/*SKILLS*/}
+            {/* Skills Section */}
+<TabsContent value="skills">
+  <h3 className="text-4xl font-bold mb-6">Skills</h3>
+  <div className="flex flex-col gap-8">
+    {skills.map((skillCategory, index) => (
+      <div key={index}>
+        <h4 className="text-2xl font-semibold text-accent mb-4">{skillCategory.category}</h4>
+        <div className="flex flex-wrap gap-3">
+          {skillCategory.items.map((skill, i) => (
+            <div 
+              key={i} 
+              className="px-4 py-2 bg-[#232329] text-white rounded-lg shadow-md text-center transition-all duration-300 
+                        hover:scale-105 hover:bg-accent hover:text-black whitespace-nowrap"
+            >
+              {skill}
             </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</TabsContent>
+{/* About Me Section */}
+{/* About Me Section */}
+<TabsContent value="about">
+  <h3 className="text-4xl font-bold mb-6">About Me</h3>
+
+  {/* Introduction */}
+  <div className="p-6 bg-[#232329] text-white rounded-lg shadow-lg">
+    <p className="text-lg text-white/80 leading-relaxed">
+      {about.description.split("\n").map((line, index) => (
+        <span key={index} className="block mb-3">{line}</span>
+      ))}
+    </p>
+  </div>
+
+  {/* Personal Information - Dynamic Boxes */}
+  <div className="flex flex-wrap gap-4 mt-6 justify-center">
+    {about.info.map((item, index) => (
+      <div 
+        key={index} 
+        className="px-6 py-3 bg-[#2c2c34] text-white rounded-lg shadow-md 
+                   text-center transition-all duration-300 
+                   hover:scale-105 hover:bg-accent hover:text-black whitespace-nowrap"
+      >
+        <p className="text-sm text-white/60">{item.fieldName}</p>
+        <p className="text-lg font-semibold">{item.fieldValue}</p>
+      </div>
+    ))}
+  </div>
+
+  {/* CTA */}
+  <div className="mt-8 text-center">
+    <p className="text-lg text-white/80">🚀 Always excited to collaborate & innovate! Let’s connect!</p>
+  </div>
+</TabsContent>
+
+
+
+
+          </div>
         </Tabs>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Resume
+export default Resume;
